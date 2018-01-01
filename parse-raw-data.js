@@ -18,11 +18,6 @@ function parseRawData(rawData) {
 				var key = changeCase.camelCase(lineParts[0]),
 					value = lineParts.splice(1).join(':').trim()
 
-				// Replace as we have the history in the array.
-				if ( key in result ) {
-					result[key] = value;
-					return
-				}
 				result[key] = value;
 			}
 		}

@@ -18,9 +18,9 @@ function parseRawData(rawData) {
 				var key = changeCase.camelCase(lineParts[0]),
 					value = lineParts.splice(1).join(':').trim()
 
-				// If multiple lines use the same key, combine the values
+				// Replace as we have the history in the array.
 				if ( key in result ) {
-					result[key] = `${result[key]} ${value}`;
+					result[key] = value;
 					return
 				}
 				result[key] = value;
